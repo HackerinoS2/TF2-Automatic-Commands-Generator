@@ -105,8 +105,7 @@ function generateCommands() {
 
         //If there is no item name, dont output nothing
         if (itemArray[counter] == "") {
-            outputCommands = "";
-            document.getElementById("outputCommands").innerHTML += outputCommands.trim() + "\n";
+            document.getElementById("outputCommands").innerHTML += "" + "\n";
         } else {
             //Output
             document.getElementById("outputCommands").innerHTML += itemOption + outputCommands.trim() + "\n";
