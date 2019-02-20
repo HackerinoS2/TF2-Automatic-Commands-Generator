@@ -1,0 +1,25 @@
+Preciso de fazer um site para fazer os comandos de texto para o bot de tf2
+
+Ele precisa de ter opção tanto para autopriced como sem. 
+
+Opções:
+Name (Textarea)
+quality
+craftable (booliana)
+australium (booliana)
+killstreak
+effect
+intent
+limit
+
+Sem autoprice:
+buy_metal
+sell_metal
+buy_key
+sell_key
+
+killstreak= eg. ‘1’ for Killstreak, ‘2’ for Spec Killstreak, ‘3’ for Prof Killstreak. Default is ‘0’
+
+Processar os dados por javascript assim: 
+
+!add name=(nome)&quality=(qualidade)&craftable=......
