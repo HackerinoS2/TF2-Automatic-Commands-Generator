@@ -103,7 +103,12 @@ function generateCommands() {
             outputCommands = itemArray[counter].trim() + quality + craftable + australium + killstreak + effect + intent + limit;
         }
 
-        //Output
-        document.getElementById("outputCommands").innerHTML += itemOption + outputCommands.trim() + "\n";
+        //If there is no item name, dont output nothing
+        if (itemArray[counter] == null) {
+            outputCommands = null;
+        } else {
+            //Output
+            document.getElementById("outputCommands").innerHTML += itemOption + outputCommands.trim() + "\n";
+        }
     }
 }
