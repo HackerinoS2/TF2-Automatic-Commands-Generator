@@ -18,3 +18,9 @@ body {
 .footer a {
     color: white;
 }
+
+textarea{
+    resize: none;
+}
+
+/* aethez is gay */
