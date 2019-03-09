@@ -57,9 +57,13 @@ function generateCommands() {
         effect = "";
     }
 
-    if (intent == "&intent=bank") {
+    /* if (intent == "&intent=bank") {
         intent = "";
-    }
+    } */
+
+    /* if (intent == "&intent=bank" && itemAction == "Update") {
+        intent = "&intent=bank";
+    } */
 
     if (limit == "&limit=1") {
         limit = "";
