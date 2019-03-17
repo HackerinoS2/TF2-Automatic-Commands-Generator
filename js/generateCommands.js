@@ -57,7 +57,7 @@ function generateCommands() {
         effect = "";
     }
     
-    if (intent == "&intent=bank" && itemOption == "!add name=") {
+    if (intent == "&intent=bank" && itemOption != "!add update=") {
         intent = "";
     } 
 
