@@ -56,10 +56,10 @@ function generateCommands() {
     if (effect == "&effect=") {
         effect = "";
     }
-
-    /* if (intent == "&intent=bank") {
+    
+    if (intent == "&intent=bank" && itemOption == "!add name=") {
         intent = "";
-    } */
+    } 
 
     /* if (intent == "&intent=bank" && itemAction == "Update") {
         intent = "&intent=bank";
