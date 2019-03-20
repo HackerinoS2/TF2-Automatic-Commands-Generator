@@ -33,6 +33,7 @@ function generateCommands() {
 
     //Filter data because of the bot's default values
     var autoprice;
+
     if (autopricer == "Enable Autopricer") {
         autoprice = "&autoprice=false"
     }
@@ -57,7 +58,7 @@ function generateCommands() {
         effect = "";
     }
     
-    if (intent == "&intent=bank" && itemOption != "!add update=") {
+    if (intent == "&intent=bank" && itemOption == "!add name=") {
         intent = "";
     } 
 
