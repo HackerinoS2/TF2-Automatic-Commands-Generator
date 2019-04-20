@@ -25,10 +25,23 @@ function generateCommands() {
     var itemAction = document.getElementById("selectItemAction").options[document.getElementById("selectItemAction").selectedIndex].value;
     var itemOption;
 
-    if (itemAction == "Add") {
+    /* if (itemAction == "Add") {
         itemOption = "!add name="
     } else if (itemAction == "Update") {
         itemOption = "!update name="
+    } */
+
+    switch (itemAction) {
+        case "Add":
+            itemOption = "!add name=";
+            break;
+
+        case "Update":
+            itemOption = "!update name=";
+            break;
+
+        case "Remove":
+            itemOption = "!remove item=";
     }
 
     //Filter data because of the bot's default values
@@ -102,18 +115,22 @@ function generateCommands() {
 
     //Process Data
     for (var counter = 0; counter < itemArray.length; counter++) {
-        if (autopricer == "Enable Autopricer") {
-            outputCommands = itemArray[counter].trim() + quality + craftable + australium + killstreak + effect + intent + autoprice + String(sellKeys) + String(sellMetal) + String(buyKeys) + String(buyMetal) + String(limit);
+        if (itemAction != "Remove") {
+            if (autopricer == "Enable Autopricer") {
+                outputCommands = itemArray[counter].trim() + quality + craftable + australium + killstreak + effect + intent + autoprice + String(sellKeys) + String(sellMetal) + String(buyKeys) + String(buyMetal) + String(limit);
+            } else {
+                outputCommands = itemArray[counter].trim() + quality + craftable + australium + killstreak + effect + intent + limit;
+            }
         } else {
-            outputCommands = itemArray[counter].trim() + quality + craftable + australium + killstreak + effect + intent + limit;
+            outputCommands = itemArray[counter].trim();
         }
 
-        //If there is no item name, dont output nothing
-        if (itemArray[counter].trim() == "") {
-            document.getElementById("outputCommands").innerHTML += "" + "\n";
-        } else {
-            //Output
-            document.getElementById("outputCommands").innerHTML += itemOption + outputCommands.trim() + "\n";
-        }
+            //If there is no item name, dont output nothing
+            if (itemArray[counter].trim() == "") {
+                document.getElementById("outputCommands").innerHTML += "" + "\n";
+            } else {
+                //Output
+                document.getElementById("outputCommands").innerHTML += itemOption + outputCommands.trim() + "\n";
+            }
     }
 }
