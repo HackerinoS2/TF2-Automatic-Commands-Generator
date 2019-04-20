@@ -21,16 +21,11 @@ function generateCommands() {
     //Clears Output
     document.getElementById("outputCommands").innerHTML = "";
 
-    //Have the option to add or update items
+    //Have the option to add, update or remove items
     var itemAction = document.getElementById("selectItemAction").options[document.getElementById("selectItemAction").selectedIndex].value;
     var itemOption;
 
-    /* if (itemAction == "Add") {
-        itemOption = "!add name="
-    } else if (itemAction == "Update") {
-        itemOption = "!update name="
-    } */
-
+    //Handle item option input
     switch (itemAction) {
         case "Add":
             itemOption = "!add name=";
@@ -71,45 +66,48 @@ function generateCommands() {
         effect = "";
     }
 
+    //Make intent=bank to nothing if adding a item
     if (intent == "&intent=bank" && itemAction == "Add") {
         intent = "";
     }
 
+    //Make limit=1 to nothing if adding a item
     if (limit == "&limit=1" && itemAction == "Add") {
         limit = "";
     } 
 
-    /* if (limit == "&limit=1" && itemAction == "Update") {
-        limit = "&limit=1";
-    } */
-
     //If the autopricer is disabled, check if the user inputed the price of the item
     if (buyKeys == "&buy_keys=" && buyMetal == "&buy_metal=" && sellKeys == "&sell_keys=" && sellMetal == "&sell_metal=" && autoprice == "&autoprice=false") {
         document.getElementById("outputCommands").innerHTML = "Please fill up the pricing";
+        alert("Please fill up the pricing");
         return;
     }
 
     if (buyKeys == "&buy_keys=" && autoprice == "&autoprice=false") {
         document.getElementById("outputCommands").innerHTML = "Please fill up Buy Keys";
+        alert("Please fill up Buy Keys");
         return;
     }
 
     if (buyMetal == "&buy_metal=" && autoprice == "&autoprice=false") {
         document.getElementById("outputCommands").innerHTML = "Please fill up Buy Metal";
+        alert("Please fill up Buy Metal");
         return;
     }
 
     if (sellKeys == "&sell_keys=" && autoprice == "&autoprice=false") {
         document.getElementById("outputCommands").innerHTML = "Please fill up Sell Keys";
+        alert("Please fill up Sell Keys");
         return;
     }
 
     if (sellMetal == "&sell_metal=" && autoprice == "&autoprice=false") {
         document.getElementById("outputCommands").innerHTML = "Please fill up Sell Metal";
+        alert("Please fill up Sell Metal");
         return;
     }
 
-    //Split Items To Array
+    //Split Each Item (from each line) To Array
     var itemArray = items.split("\n");
 
 
