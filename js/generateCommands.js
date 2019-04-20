@@ -57,17 +57,17 @@ function generateCommands() {
     if (effect == "&effect=") {
         effect = "";
     }
-    
-    if (intent == "&intent=bank" && itemOption == "!add name=") {
+
+    if (intent == "&intent=bank" && itemAction == "Add") {
         intent = "";
-    } 
+    }
 
-    /* if (intent == "&intent=bank" && itemAction == "Update") {
-        intent = "&intent=bank";
-    } */
-
-    if (limit == "&limit=1") {
+    if (limit == "&limit=1" && itemAction == "Add") {
         limit = "";
+    }
+
+    if (limit == "&limit=1" && itemAction == "Update") {
+        limit = "&limit=1";
     }
 
     //If the autopricer is disabled, check if the user inputed the price of the item
