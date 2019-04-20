@@ -77,11 +77,11 @@ function generateCommands() {
 
     if (limit == "&limit=1" && itemAction == "Add") {
         limit = "";
-    }
+    } 
 
-    if (limit == "&limit=1" && itemAction == "Update") {
+    /* if (limit == "&limit=1" && itemAction == "Update") {
         limit = "&limit=1";
-    }
+    } */
 
     //If the autopricer is disabled, check if the user inputed the price of the item
     if (buyKeys == "&buy_keys=" && buyMetal == "&buy_metal=" && sellKeys == "&sell_keys=" && sellMetal == "&sell_metal=" && autoprice == "&autoprice=false") {
